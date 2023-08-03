@@ -1,0 +1,31 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: produto
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health
+  health:
+    circuitbreakers:
+      enabled: true
+resilience4j:
+  circuitbreaker:
+    instances:
+      produto:
+        registerHealthIndicator: true
+        failureRateThreshold: 50
+        slidingWindowSize: 8
+        minimumNumberOfCalls: 4
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowType: COUNT_BASED
+
+
+
