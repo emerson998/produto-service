@@ -6,6 +6,9 @@ Este projeto implementa uma API REST para gerenciamento de produtos usando Sprin
 
 O ProdutoController é responsável por expor os endpoints da API. Ele interage com um ProdutoRepository para buscar informações de produtos e com um AvaliacaoClient para obter as avaliações de cada produto. A chamada ao cliente de avaliações é onde a resiliência é aplicada, protegendo a API de produtos de falhas no serviço de avaliações.
 
+### O serviço de avaliações está disponível em:
+https://github.com/emerson998/avaliacao-service
+
 ## Endpoints
 
 ### GET /produtos
